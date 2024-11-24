@@ -7,14 +7,14 @@ Version 0.1.0
 ### Table of Contents
 
 - [Getting started](#gettingstarted)
-- Utility types
+- [Utility types](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md)
 	- [ValueOf](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#valueof)
 	- [ValueOfKey](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#valueofkey)
 	- [OptionalKey](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#optionalkey)
 	- [Writeable](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#writeable)
 	- [RenameKey](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#renamekey)
 	- [ArgumentTypes](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#argumenttypes)
-- Extenders types
+- [Extenders types](https://github.com/alessiofrittoli/type-utils/blob/master/docs/extenders/README.md)
 	- [JSON](https://github.com/alessiofrittoli/type-utils/blob/master/docs/extenders/README.md#json)
 		- [JSON.stringify\<T\>()](https://github.com/alessiofrittoli/type-utils/blob/master/docs/extenders/README.md#jsonstringifyt)
 		- [JSON.parse\<T\>()](https://github.com/alessiofrittoli/type-utils/blob/master/docs/extenders/README.md#jsonparset)
