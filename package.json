@@ -28,7 +28,7 @@
 	"scripts": {
 		"build": "eslint && tsup",
 		"lint": "eslint",
-		"postinstall": "node scripts/postinstall/index.js"
+		"postinstall": "node scripts/postinstall.js"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.15.0",
