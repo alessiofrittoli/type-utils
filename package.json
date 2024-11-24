@@ -1,0 +1,42 @@
+{
+	"name": "@alessiofrittoli/type-utils",
+	"version": "0.1.0",
+	"description": "Lightweight TypeScript types utilities",
+	"author": {
+		"name": "Alessio Frittoli",
+		"email": "info@alessiofrittoli.it",
+		"url": "https://alessiofrittoli.it"
+	},
+	"license": "MIT",
+	"keywords": [
+		"typescript"
+	],
+	"homepage": "https://github.com/alessiofrittoli/type-utils#readme",
+	"bugs": {
+		"url": "https://github.com/alessiofrittoli/type-utils/issues",
+		"email": "info@alessiofrittoli.it"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/alessiofrittoli/type-utils.git"
+	},
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "eslint && tsup",
+		"lint": "eslint",
+		"postinstall": "node scripts/postinstall/index.js"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.15.0",
+		"@types/node": "^22.9.3",
+		"eslint": "^9.15.0",
+		"globals": "^15.12.0",
+		"tsup": "^8.3.5",
+		"typescript": "^5.6.3",
+		"typescript-eslint": "^8.15.0"
+	}
+}
