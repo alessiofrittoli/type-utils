@@ -1,4 +1,4 @@
-# Type Utils 🤓
+# Type Utils ❇️
 
 Version 0.1.0
 
