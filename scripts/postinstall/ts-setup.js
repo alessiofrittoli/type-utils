@@ -1,6 +1,5 @@
-const fs		= require( 'fs' )
-const path		= require( 'path' )
-const project	= require( '../package.json' )
+const fs	= require( 'fs' )
+const path	= require( 'path' )
 
 
 const tsSetup = () => {
@@ -11,15 +10,20 @@ const tsSetup = () => {
 		process.exit( 1 )
 	}
 
-	const typeUtilsRefFile = path.resolve( projectRoot, 'type-utils.d.ts' )
+	const tsconfigPath = path.resolve( projectRoot, 'type-utils.d.ts' )
+
+	/* if ( ! fs.existsSync( tsconfigPath ) ) {
+		console.error( `No tsconfig.json found in the project at: ${tsconfigPath}` )
+		process.exit( 1 )
+	} */
 
 	const data = [
-		`/// <reference types="${ project.name }" />`,
+		'/// <reference types="@alessiofrittoli/type-utils" />',
 		'// NOTE: This file should not be edited'
 	].join( '\n\n' )
 
 	try {
-		fs.writeFileSync( typeUtilsRefFile, data )
+		fs.writeFileSync( tsconfigPath, data )
 		console.log( '"type-utils.d.ts" has been created at the root of your project.' )
 		console.log( 'Please update your tsconfig.json to add this file in your "include" property of your tsconfig.json file.' )
 	} catch ( error ) {
@@ -29,4 +33,4 @@ const tsSetup = () => {
 
 }
 
-tsSetup()
+module.exports = tsSetup
