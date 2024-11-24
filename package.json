@@ -1,6 +1,6 @@
 {
 	"name": "@alessiofrittoli/type-utils",
-	"version": "0.1.0-alpha.1",
+	"version": "0.1.1",
 	"description": "Lightweight TypeScript types utilities",
 	"author": {
 		"name": "Alessio Frittoli",
@@ -23,7 +23,7 @@
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"files": [
-		"dist"
+		"dist", "scripts"
 	],
 	"scripts": {
 		"build": "eslint && tsup",

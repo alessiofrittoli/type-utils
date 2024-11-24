@@ -1,24 +1,21 @@
-const fs	= require( 'fs' )
-const path	= require( 'path' )
+const fs		= require( 'fs' )
+const path		= require( 'path' )
+const project	= require( '../../package.json' )
 
 
 const tsSetup = () => {
-	const projectRoot = process.env.INIT_CWD
 
-	if ( ! projectRoot ) {
+	const projectRoot = process.env.INIT_CWD || process.cwd()
+
+	if ( ! projectRoot || projectRoot.endsWith( project.name ) ) {
 		console.error( 'INIT_CWD is not set. This script must be run during pnpm install.' )
 		process.exit( 1 )
 	}
 
 	const tsconfigPath = path.resolve( projectRoot, 'type-utils.d.ts' )
 
-	/* if ( ! fs.existsSync( tsconfigPath ) ) {
-		console.error( `No tsconfig.json found in the project at: ${tsconfigPath}` )
-		process.exit( 1 )
-	} */
-
 	const data = [
-		'/// <reference types="@alessiofrittoli/type-utils" />',
+		`/// <reference types="${ project.name }" />`,
 		'// NOTE: This file should not be edited'
 	].join( '\n\n' )
 

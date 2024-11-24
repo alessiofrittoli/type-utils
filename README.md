@@ -1,6 +1,6 @@
 # Type Utils ❇️
 
-Version 0.1.0-alpha.1
+Version 0.1.1
 
 ## Lightweight TypeScript types utilities
 
@@ -54,6 +54,12 @@ Please make sure to add it in the array of the "include" property in your `tscon
 ```
 
 You can skip this process if `*.ts` is already in your "include" array.
+
+⚠️ If the `type-utils.d.ts` file creation fails you run the following command to manually execute the script:
+
+```bash
+node node_modules/@alessiofrittoli/type-utils/scripts/postinstall/index.js
+```
 
 ---
 
