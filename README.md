@@ -31,13 +31,13 @@ Version 0.1.0
 Run the following command to start using `type-utils` in your projects:
 
 ```bash
-npm i @alessiofrittoli/type-utils
+npm i -D @alessiofrittoli/type-utils
 ```
 
 or using `pnpm`
 
 ```bash
-pnpm i @alessiofrittoli/type-utils
+pnpm i -D @alessiofrittoli/type-utils
 ```
 
 This tiny library defines some global types which are not imported in your IDE by default.\
