@@ -37,7 +37,7 @@ interface MyObj
 	age	: number
 }
 
-type AgeType = ValueOf2<MyObj, 'age'> // number
+type AgeType = ValueOfKey<MyObj, 'age'> // number
 ```
 
 ---
