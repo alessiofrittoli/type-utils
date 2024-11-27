@@ -5,9 +5,13 @@ const project	= require( '../../package.json' )
 
 const tsSetup = () => {
 
-	const projectRoot = process.env.INIT_CWD || process.cwd()
+	const projectName	= project.name.replace( '@alessiofrittoli/', '' )
+	const projectRoot	= process.env.INIT_CWD || process.cwd()
 
-	if ( ! projectRoot || projectRoot.endsWith( project.name ) ) {
+	if ( projectRoot.endsWith( projectName ) ) {
+		return
+	}
+	if ( ! projectRoot ) {
 		console.error( 'INIT_CWD is not set. This script must be run during pnpm install.' )
 		process.exit( 1 )
 	}
