@@ -71,6 +71,15 @@ warnings / errors check.
 pnpm lint
 ```
 
+---
+
+### Contributing
+
+Contributions are truly welcome!\
+Please refer to the [Contributing Doc](./CONTRIBUTING.md) for more information on how to start contributing to this project.
+
+---
+
 ### Security
 
 If you believe you have found a security vulnerability, we encourage you to **_responsibly disclose this and NOT open a public issue_**. We will investigate all legitimate reports. Email `security@alessiofrittoli.it` to disclose any security vulnerabilities.
