@@ -19,7 +19,7 @@ By allowing a type argument, these methods can now work with strongly-typed obje
 interface MyObj
 {
 	name: string
-	age	: number
+	age: number
 }
 
 const data: MyObj = { name: 'Name', age: 27 }
@@ -35,8 +35,9 @@ const stringifiedData2 = JSON.stringify<MyObj>( data )
 
 #### [JSON.parse\<T\>()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
 
-- [JSON.parse<T>()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) can now accept `Stringified<T>` as input, maintaining the type information of the parsed object.
-- The method can infer the type of the parsed object if it was previously serialized using `stringify` with the same type argument.
+- [JSON.parse\<T\>()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) can now accept `Stringified<T>` as input, maintaining the type information of the parsed object.
+- The method can infer the type of the parsed object if it was previously serialized using `stringify` with the same type argument.\
+	⚠️ For some reason, when using these types in an external project, the Type cannot be automatically inferred from the stringified data. If so, explicitly set it's types as in the example below.
 
 ##### Example
 
@@ -62,7 +63,7 @@ By allowing a type argument for `stringify` and `parse`, you can:
 
 ### `Body`
 
-#### [`Body.json\<T\>()`](https://developer.mozilla.org/en-US/docs/Web/API/Response/json)
+#### [Body.json\<T\>()](https://developer.mozilla.org/en-US/docs/Web/API/Response/json)
 
 The `Body.json()` method is augmented to support a generic type `T`, which ensures that the parsed response is strongly typed.
 
@@ -74,7 +75,7 @@ When calling `Body.json()`, you can explicitly define the type of the response d
 interface MyObj
 {
 	name: string
-	age	: number
+	age: number
 }
 
 const response = await fetch( ... )
