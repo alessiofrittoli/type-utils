@@ -22,7 +22,7 @@ declare global
 		): T extends Date ? string : string & Stringified<T>
 				
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		parse<T, U extends keyof T = keyof T>( text: string | Stringified<T>, reviver?: ( key: U, value: T[ U ] ) => any ): T extends Date ? string : string & Stringified<T>
+		parse<T, U extends keyof T = keyof T>( text: string | Stringified<T>, reviver?: ( key: U, value: T[ U ] ) => any ): T
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		parse( text: string, reviver?: ( key: any, value: any ) => any ): any
 	}
