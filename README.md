@@ -1,6 +1,6 @@
 # Type Utils ❇️
 
-Version 0.3.1
+Version 0.3.2
 
 ## Lightweight TypeScript types utilities
 
