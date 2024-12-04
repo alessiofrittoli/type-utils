@@ -9,6 +9,7 @@ const tsSetup = () => {
 	const projectRoot	= process.env.INIT_CWD || process.cwd()
 
 	if ( projectRoot.endsWith( projectName ) ) {
+		console.log( `Skip "postinstall" script. Running in ${ project.name }` )
 		return
 	}
 	if ( ! projectRoot ) {
