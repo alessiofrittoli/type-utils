@@ -113,3 +113,91 @@ const foo = ( x: string, y: number ) => {}
 // Extract argument types
 type FooArguments = ArgumentTypes<typeof foo> // [ string, number ]
 ```
+
+---
+
+### `Full<T>`
+
+The `Full<T>` utility type is a TypeScript mapped type that transforms all optional properties of a given type `T` into required properties by 1 level.\
+It ensures that every property in the resulting type is non-optional.
+
+#### Usage
+
+```ts
+type User = {
+	id?		: number
+	name?	: string
+	profile?: {
+		age?: number
+	}
+}
+
+type FullUser = Full<User>
+
+const user: FullUser = {
+	id		: 1,		// Now required
+	name	: 'John',	// Now required
+	profile	: {			// Now required
+		age: 18 // Still optional
+	}
+}
+```
+
+---
+
+### `DeepFull<T>`
+
+The `DeepFull<T>` utility type is a recursive TypeScript type that ensures all properties of a given type `T`, including nested properties, are required.\
+It applies the `Full` transformation to every property of `T`, traversing deeply into any nested objects.
+
+#### Usage
+
+```ts
+type User = {
+	id?		: number
+	name?	: string
+	profile?: {
+		age?: number
+	}
+}
+
+const user: DeepFull<User> = {
+	id		: 1,		// Now required
+	name	: 'John',	// Now required
+	profile	: {
+		age: 18 // Now required
+	},
+}
+```
+
+---
+
+### `NonNullableFields<T>`
+
+The `NonNullableFields<T>` utility type removes `null` and `undefined` from all properties of a given type `T`.\
+This ensures that every property of the resulting type cannot hold `null` or `undefined` values.
+
+⚠️ Optional properties marked with `?` will be still optional! ⚠️
+
+#### Usage
+
+```ts
+type User = {
+	id		: number | null
+	name	: string | undefined
+	age?	: number
+}
+
+const user: NonNullableFields<User> = {
+	id	: 1,		// `null` removed
+	name: 'John',	// `undefined` removed
+	age	: 30,		// Still optional property
+}
+
+
+const user: NonNullableFields<Full<User>> = {
+	id	: 1,		// `null` removed
+	name: 'John',	// `undefined` removed
+	age	: 30,		// Now required
+}
+```
