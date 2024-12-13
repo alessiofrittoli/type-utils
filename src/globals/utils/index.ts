@@ -32,6 +32,30 @@ declare global
 	/** Get the Type of a function arguments. */
 	// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type, @typescript-eslint/no-explicit-any
 	type ArgumentTypes<F extends Function> = F extends ( ...args: infer A ) => any ? A : never
+
+
+	/**
+	 * Makes all 1st level properties of a type required.
+	 */
+	type Full<T> = {
+		[ P in keyof T ]-?: T[ P ]
+	}
+
+
+	/**
+	 * Recursively makes all properties of a type required at all nested levels.
+	 */
+	type DeepFull<T> = {
+		[ P in keyof T ]-?: DeepFull<T[ P ]>
+	}
+
+
+	/**
+	 * Removes `null` and `undefined` from all properties of a type.
+	 */
+	type NonNullableFields<T> = {
+		[ P in keyof T ]: NonNullable<T[ P ]>
+	}
 }
 
 
