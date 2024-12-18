@@ -1,6 +1,6 @@
 # Type Utils ❇️
 
-Version 1.0.0
+Version 1.0.1
 
 ## Lightweight TypeScript types utilities
 
@@ -41,7 +41,7 @@ pnpm i @alessiofrittoli/type-utils
 ```
 
 This tiny library defines some global types which are not imported in your IDE by default.\
-After installation a `postinstall` scritp is executed to create the `type-utils.d.ts` file at the root of your project.
+After installation a `postinstall` script is executed to create the `type-utils.d.ts` file at the root of your project.
 Please make sure to add it in the array of the "include" property in your `tsconfig.json`.
 
 ```json
