@@ -7,6 +7,7 @@ const tsSetup = () => {
 
 	const projectName	= project.name.replace( '@alessiofrittoli/', '' )
 	const projectRoot	= process.env.INIT_CWD || process.cwd()
+	const typesFilename	= `${ projectName }.d.ts`
 
 	if ( projectRoot.endsWith( projectName ) ) {
 		console.log( `Skip "postinstall" script. Running in ${ project.name }` )
@@ -17,7 +18,7 @@ const tsSetup = () => {
 		process.exit( 1 )
 	}
 
-	const tsconfigPath = path.resolve( projectRoot, 'type-utils.d.ts' )
+	const tsconfigPath = path.resolve( projectRoot, typesFilename )
 
 	const data = [
 		`/// <reference types="${ project.name }" />`,
@@ -26,10 +27,10 @@ const tsSetup = () => {
 
 	try {
 		fs.writeFileSync( tsconfigPath, data )
-		console.log( '"type-utils.d.ts" has been created at the root of your project.' )
+		console.log( `"${ typesFilename }" has been created at the root of your project.` )
 		console.log( 'Please update your tsconfig.json to add this file in your "include" property of your tsconfig.json file.' )
 	} catch ( error ) {
-		console.error( 'An error occured while creating "type-utils.d.ts" at the root of your project. Some global types may not working as expect.', error )
+		console.error( `An error occured while creating "${ typesFilename }" at the root of your project. Some global types may not working as expect.`, error )
 		process.exit( 1 )
 	}
 
