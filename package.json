@@ -1,6 +1,6 @@
 {
 	"name": "@alessiofrittoli/type-utils",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "Lightweight TypeScript types utilities",
 	"author": {
 		"name": "Alessio Frittoli",
@@ -26,7 +26,7 @@
 		"dist", "scripts"
 	],
 	"scripts": {
-		"build": "eslint && tsup",
+		"build": "pnpm lint && tsup",
 		"lint": "eslint",
 		"postinstall": "node scripts/postinstall/index.js"
 	},
