@@ -56,6 +56,53 @@ declare global
 	type NonNullableFields<T> = {
 		[ P in keyof T ]: NonNullable<T[ P ]>
 	}
+
+
+	/**
+	 * Get the type of the value of merged enums.
+	 * 
+	 * @example
+	 * 
+	 * ```ts
+	 * enum Mammals {
+	 * 	Humans,
+	 * 	Bats,
+	 * 	Dolphins
+	 * }
+	 * 
+	 * enum Reptiles {
+	 * 	Snakes,
+	 * 	Alligators,
+	 * 	Lizards
+	 * }
+	 * 
+	 * // merged enums.
+	 * const Animals = { Mammals, Reptiles }
+	 * type Animals = typeof Animals
+	 * 
+	 * type Animal = MergedEnumValueType<typeof Animals>
+	 * 
+	 * const testAnimal: Animal = Animals.Mammals.Humans as any
+	 * 
+	 * switch ( testAnimal ) {
+	 * 	case Animals.Mammals.Humans:
+	 * 	case Animals.Mammals.Bats:
+	 * 	case Animals.Mammals.Dolphins:
+	 * 	case Animals.Reptiles.Snakes:
+	 * 	case Animals.Reptiles.Alligators:
+	 * 	case Animals.Reptiles.Lizards:
+	 * 		break
+	 * 	default: {
+	 * 		const invalid = testAnimal // `testAnimal` is type of never
+	 * 	}
+	 * }
+	 * ```
+	 */
+	type MergedEnumValue<T> = {
+		[ K in keyof T ]: {
+			[ K2 in keyof T[ K ] ]: T[ K ][ K2 ]
+		}[ keyof T[ K ] ]
+	}[ keyof T ]
 }
 
 
