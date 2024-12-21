@@ -82,7 +82,7 @@ declare global
 	 * 
 	 * type Animal = MergedEnumValueType<typeof Animals>
 	 * 
-	 * const testAnimal: Animal = Animals.Mammals.Humans as any
+	 * const testAnimal: Animal = 0 as any
 	 * 
 	 * switch ( testAnimal ) {
 	 * 	case Animals.Mammals.Humans:

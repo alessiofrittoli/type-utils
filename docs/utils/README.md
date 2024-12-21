@@ -201,3 +201,51 @@ const user: NonNullableFields<Full<User>> = {
 	age	: 30,		// Now required
 }
 ```
+
+---
+
+### `MergedEnumValue<T>`
+
+The `MergedEnumValue<T>` utility extracts the value type from merged enums. It is particularly useful when working with multiple enums that are grouped together, allowing you to derive a type representing all possible values across the enums.
+
+#### Usage
+
+```ts
+// Define two enums
+enum Mammals {
+	Humans,
+	Bats,
+	Dolphins
+}
+
+enum Reptiles {
+	Snakes,
+	Alligators,
+	Lizards
+}
+
+// Merge the enums
+const Animals = { Mammals, Reptiles }
+type Animals = typeof Animals
+
+// Derive the type for all possible enum values
+type Animal = MergedEnumValue<typeof Animals>
+
+// Example usage
+const testAnimal: Animal = 0 as any
+
+switch ( testAnimal ) {
+	case Animals.Mammals.Humans:
+	case Animals.Mammals.Bats:
+	case Animals.Mammals.Dolphins:
+	case Animals.Reptiles.Snakes:
+	case Animals.Reptiles.Alligators:
+	case Animals.Reptiles.Lizards:
+		// Valid cases
+		break;
+	default: {
+		// `testAnimal` will be of type `never` here, ensuring exhaustive checks
+		const invalid = testAnimal
+	}
+}
+```
