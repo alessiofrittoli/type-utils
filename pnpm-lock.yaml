@@ -7,6 +7,13 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@alessiofrittoli/chain-functions':
+        specifier: ^1.0.1
+        version: 1.0.1
+      '@alessiofrittoli/post-install-scripts':
+        specifier: 0.2.0
+        version: 0.2.0
     devDependencies:
       '@eslint/js':
         specifier: ^9.17.0
@@ -31,6 +38,12 @@ importers:
         version: 8.18.1(eslint@9.17.0)(typescript@5.7.2)
 
 packages:
+
+  '@alessiofrittoli/chain-functions@1.0.1':
+    resolution: {integrity: sha512-vJkYv+eqUj5Ht363o8hD/TLIzroepwkCVz956Zmic11uefPFmgMKHgd59vAn9B92AKmH2YVBAwlpoN4mUga2/A==}
+
+  '@alessiofrittoli/post-install-scripts@0.2.0':
+    resolution: {integrity: sha512-hqz/Tqkos4xJEaXaDqRn3eb5U5lr79XXWVdyOlQG5ku6M+nLxJbi7cWIC8yeDwkkEoPgaPcXlyrcUcvItyWgtw==}
 
   '@esbuild/aix-ppc64@0.24.0':
     resolution: {integrity: sha512-WtKdFM7ls47zkKHFVzMz8opM7LkcsIp9amDUBIAWirg70RM71WRSjdILPsY5Uv1D42ZpUfaPILDlfactHgsRkw==}
@@ -1028,6 +1041,10 @@ packages:
     engines: {node: '>=10'}
 
 snapshots:
+
+  '@alessiofrittoli/chain-functions@1.0.1': {}
+
+  '@alessiofrittoli/post-install-scripts@0.2.0': {}
 
   '@esbuild/aix-ppc64@0.24.0':
     optional: true
