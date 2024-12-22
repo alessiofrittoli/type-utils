@@ -41,21 +41,23 @@ pnpm i @alessiofrittoli/type-utils
 ```
 
 This tiny library defines some global types which are not imported in your IDE by default.\
-After installation a `postinstall` script is executed to create the `type-utils.d.ts` file at the root of your project.
-Please make sure to add it in the array of the "include" property in your `tsconfig.json`.
+After installation a `postinstall` script is executed to create the `alessiofrittoli-env.d.ts` file at the root of your project.
+This script will try to update your `tsconfig.json` file.
+
+If that fail, please, make sure to add `alessiofrittoli-env.d.ts` in the array of the "include" property in your `tsconfig.json`.
 
 ```json
 {
 	"compilerOptions": {
 		...
 	},
-	"include": [ ..., "type-utils.d.ts" ],
+	"include": [ ..., "alessiofrittoli-env.d.ts" ],
 }
 ```
 
 You can skip this process if `*.ts` is already in your "include" array.
 
-⚠️ If the `type-utils.d.ts` file creation fails you run the following command to manually execute the script:
+⚠️ If the `alessiofrittoli-env.d.ts` file creation fails you can run the following command to manually execute the script:
 
 ```bash
 node node_modules/@alessiofrittoli/type-utils/scripts/postinstall/index.js
