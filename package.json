@@ -1,6 +1,6 @@
 {
 	"name": "@alessiofrittoli/type-utils",
-	"version": "1.2.0",
+	"version": "1.3.0",
 	"description": "Lightweight TypeScript types utilities",
 	"author": {
 		"name": "Alessio Frittoli",
