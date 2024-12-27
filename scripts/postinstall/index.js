@@ -1,4 +1,4 @@
-const Chain		= require( '@alessiofrittoli/chain-functions' )
+const { Chain }	= require( '@alessiofrittoli/chain-functions' )
 const tsSetup	= require( './ts-setup.js' )
 
 /** @type {import( '@alessiofrittoli/chain-functions/types' ).LastChainLink<() => void | Promise<void>>} */
