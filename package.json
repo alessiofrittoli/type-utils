@@ -28,7 +28,9 @@
 	],
 	"scripts": {
 		"build": "pnpm lint && tsup",
+		"build:watch": "tsup --watch",
 		"lint": "eslint",
+		"release": "node scripts/publish.js --verbose --npm",
 		"postinstall": "node scripts/postinstall/index.js"
 	},
 	"devDependencies": {
