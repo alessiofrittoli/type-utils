@@ -21,6 +21,7 @@
 		"url": "git+https://github.com/alessiofrittoli/type-utils.git"
 	},
 	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
 	"files": [
 		"dist",
@@ -44,6 +45,6 @@
 	},
 	"dependencies": {
 		"@alessiofrittoli/chain-functions": "^2.0.0",
-		"@alessiofrittoli/node-scripts": "2.1.0"
+		"@alessiofrittoli/node-scripts": "2.2.1"
 	}
 }
