@@ -9,7 +9,7 @@
 	},
 	"license": "MIT",
 	"keywords": [
-		"typescript"
+		"typescript", "type-utils"
 	],
 	"homepage": "https://github.com/alessiofrittoli/type-utils#readme",
 	"bugs": {
@@ -25,7 +25,7 @@
 	"types": "./dist/index.d.ts",
 	"files": [
 		"dist",
-		"scripts"
+		"scripts/postinstall"
 	],
 	"scripts": {
 		"build": "pnpm lint && tsup",
@@ -41,7 +41,7 @@
 		"globals": "^15.14.0",
 		"tsup": "^8.3.5",
 		"typescript": "^5.7.2",
-		"typescript-eslint": "^8.18.2"
+		"typescript-eslint": "^8.19.0"
 	},
 	"dependencies": {
 		"@alessiofrittoli/chain-functions": "^2.0.0",
