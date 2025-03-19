@@ -51,8 +51,8 @@
 		"typescript-eslint": "^8.26.1"
 	},
 	"dependencies": {
-		"@alessiofrittoli/chain-functions": "^2.0.0",
-		"@alessiofrittoli/node-scripts": "2.3.0"
+		"@alessiofrittoli/chain-functions": "^2.0.1",
+		"@alessiofrittoli/node-scripts": "2.3.1"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [
