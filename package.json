@@ -15,7 +15,8 @@
 		}
 	],
 	"keywords": [
-		"typescript", "type-utils"
+		"typescript",
+		"type-utils"
 	],
 	"homepage": "https://github.com/alessiofrittoli/type-utils#readme",
 	"bugs": {
@@ -41,16 +42,21 @@
 		"postinstall": "node scripts/postinstall/index.js"
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.17.0",
-		"@types/node": "^22.10.2",
-		"eslint": "^9.17.0",
-		"globals": "^15.14.0",
-		"tsup": "^8.3.5",
-		"typescript": "^5.7.2",
-		"typescript-eslint": "^8.19.0"
+		"@eslint/js": "^9.22.0",
+		"@types/node": "^22.13.10",
+		"eslint": "^9.22.0",
+		"globals": "^16.0.0",
+		"tsup": "^8.4.0",
+		"typescript": "^5.8.2",
+		"typescript-eslint": "^8.26.1"
 	},
 	"dependencies": {
 		"@alessiofrittoli/chain-functions": "^2.0.0",
-		"@alessiofrittoli/node-scripts": "2.2.1"
+		"@alessiofrittoli/node-scripts": "2.3.0"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"esbuild"
+		]
 	}
 }
