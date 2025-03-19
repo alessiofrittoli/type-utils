@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@alessiofrittoli/chain-functions':
-        specifier: ^2.0.0
-        version: 2.0.0
+        specifier: ^2.0.1
+        version: 2.0.1
       '@alessiofrittoli/node-scripts':
-        specifier: 2.3.0
-        version: 2.3.0
+        specifier: 2.3.1
+        version: 2.3.1
     devDependencies:
       '@eslint/js':
         specifier: ^9.22.0
@@ -39,11 +39,11 @@ importers:
 
 packages:
 
-  '@alessiofrittoli/chain-functions@2.0.0':
-    resolution: {integrity: sha512-6Qm/F813NvqbnhMHtJWZnPKKrOqSC+pZzOxz8g2XC5OoZZ2fWcYvfE3q8aeAx/tKoWelRVr8GJm6vF9vwGTprw==}
+  '@alessiofrittoli/chain-functions@2.0.1':
+    resolution: {integrity: sha512-yWufVBG6VfJQcRWiO+oB93jdxIbJJLZNTXXmcbU1Sqt/sSFVRRQTIA2JBAiawut/sFfdG8cDMR7ektuwdx+BtA==}
 
-  '@alessiofrittoli/node-scripts@2.3.0':
-    resolution: {integrity: sha512-0v14p/OgZTkN2DjHvS9HuN83Dj9bjoWUwwA1EGzDLv631z6KRiGEEbzdNGoqINuonwupqkM4AGZaJ9FEj8xE7Q==}
+  '@alessiofrittoli/node-scripts@2.3.1':
+    resolution: {integrity: sha512-lREwbQ1LWI2G1qb42NKrfAVELrKLD91e50mVTVovc2l6ZVmapu/heNeKB+txgqONzk5VsDCMb+qAWGYqTiWHDA==}
 
   '@esbuild/aix-ppc64@0.25.1':
     resolution: {integrity: sha512-kfYGy8IdzTGy+z0vFGvExZtxkFlA4zAxgKEahG9KE1ScBjpQnFsNOX8KTU5ojNru5ed5CVoJYXFtoxaq5nFbjQ==}
@@ -1052,9 +1052,9 @@ packages:
 
 snapshots:
 
-  '@alessiofrittoli/chain-functions@2.0.0': {}
+  '@alessiofrittoli/chain-functions@2.0.1': {}
 
-  '@alessiofrittoli/node-scripts@2.3.0': {}
+  '@alessiofrittoli/node-scripts@2.3.1': {}
 
   '@esbuild/aix-ppc64@0.25.1':
     optional: true

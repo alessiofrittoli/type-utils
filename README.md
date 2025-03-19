@@ -1,11 +1,13 @@
 # Type Utils ❇️
 
-[![NPM Latest Version][version-badge]][npm-url] [![NPM Monthly Downloads][downloads-badge]][npm-url] [![Dependencies][deps-badge]][deps-url]
+[![NPM Latest Version][version-badge]][npm-url] [![Socket Status][socket-badge]][socket-url] [![NPM Monthly Downloads][downloads-badge]][npm-url] [![Dependencies][deps-badge]][deps-url]
 
 [![GitHub Sponsor][sponsor-badge]][sponsor-url]
 
 [version-badge]: https://img.shields.io/npm/v/%40alessiofrittoli%2Ftype-utils
 [npm-url]: https://npmjs.org/package/%40alessiofrittoli%2Ftype-utils
+[socket-badge]: https://socket.dev/api/badge/npm/package/@alessiofrittoli/type-utils
+[socket-url]: https://socket.dev/npm/package/@alessiofrittoli/type-utils/overview
 [downloads-badge]: https://img.shields.io/npm/dm/%40alessiofrittoli%2Ftype-utils.svg
 [deps-badge]: https://img.shields.io/librariesio/release/npm/%40alessiofrittoli%2Ftype-utils
 [deps-url]: https://libraries.io/npm/%40alessiofrittoli%2Ftype-utils
