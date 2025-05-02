@@ -43,17 +43,17 @@
 		"postinstall": "node scripts/postinstall/index.js"
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.22.0",
-		"@types/node": "^22.13.11",
-		"eslint": "^9.22.0",
+		"@eslint/js": "^9.25.1",
+		"@types/node": "^22.15.3",
+		"eslint": "^9.25.1",
 		"globals": "^16.0.0",
 		"tsup": "^8.4.0",
-		"typescript": "^5.8.2",
-		"typescript-eslint": "^8.27.0"
+		"typescript": "^5.8.3",
+		"typescript-eslint": "^8.31.1"
 	},
 	"dependencies": {
-		"@alessiofrittoli/chain-functions": "^2.2.0",
-		"@alessiofrittoli/node-scripts": "2.4.0"
+		"@alessiofrittoli/chain-functions": "^2.3.0",
+		"@alessiofrittoli/node-scripts": "2.5.0"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [
