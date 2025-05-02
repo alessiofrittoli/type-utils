@@ -35,8 +35,9 @@
 		"scripts/postinstall"
 	],
 	"scripts": {
-		"build": "pnpm lint && tsup",
-		"build:watch": "tsup --watch",
+		"dev": "NODE_ENV=development tsup --watch",
+		"build:prod": "NODE_ENV=production tsup",
+		"build": "pnpm lint && pnpm build:prod",
 		"lint": "eslint",
 		"release": "node scripts/publish.js --verbose --npm",
 		"postinstall": "node scripts/postinstall/index.js"
