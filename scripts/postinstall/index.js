@@ -7,7 +7,7 @@ const lastChainLink = () => () => {
 	console.log( {
 		package: project.name,
 		message: 'Post-Install done'
-	  } )
+	} )
 }
 
 /** @type {import( '@alessiofrittoli/chain-functions/types' ).ChainFactory<() => void | Promise<void>>} */

@@ -35,29 +35,31 @@
 		"scripts/postinstall"
 	],
 	"scripts": {
-		"dev": "NODE_ENV=development tsup --watch",
-		"build:prod": "NODE_ENV=production tsup",
+		"//1a": "*********************************************************************",
+		"//1b": "******************** DEV - BUILD - LINT - RELEASE *******************",
+		"//1c": "*********************************************************************",
+		"dev": "cross-env NODE_ENV=development tsup --watch",
+		"build:prod": "cross-env NODE_ENV=production tsup",
 		"build": "pnpm lint && pnpm build:prod",
 		"lint": "eslint",
-		"release": "node scripts/publish.js --verbose --npm",
+		"release": "node scripts/release.js --verbose --npm",
+		"//2a": "*********************************************************************",
+		"//2b": "******************************* OTHER *******************************",
+		"//2c": "*********************************************************************",
 		"postinstall": "node scripts/postinstall/index.js"
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.25.1",
-		"@types/node": "^22.15.3",
-		"eslint": "^9.25.1",
-		"globals": "^16.0.0",
-		"tsup": "^8.4.0",
-		"typescript": "^5.8.3",
-		"typescript-eslint": "^8.31.1"
+		"@eslint/js": "^9.39.1",
+		"@types/node": "^24.10.1",
+		"cross-env": "^10.1.0",
+		"eslint": "^9.39.1",
+		"globals": "^16.5.0",
+		"tsup": "^8.5.1",
+		"typescript": "^5.9.3",
+		"typescript-eslint": "^8.48.1"
 	},
 	"dependencies": {
-		"@alessiofrittoli/chain-functions": "^2.3.0",
-		"@alessiofrittoli/node-scripts": "2.5.0"
-	},
-	"pnpm": {
-		"onlyBuiltDependencies": [
-			"esbuild"
-		]
+		"@alessiofrittoli/chain-functions": "^2.5.0",
+		"@alessiofrittoli/node-scripts": "3.2.0"
 	}
 }
