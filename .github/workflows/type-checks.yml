@@ -1,0 +1,24 @@
+name: Type Checks
+
+on: ['push']
+
+jobs:
+  test:
+    name: Run Type Checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Setup environment
+        uses: alessiofrittoli/github-actions/.github/actions/setup-pnpm-node@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Linting
+        run: pnpm lint
+
+      - name: Type checking
+        run: pnpm tsc

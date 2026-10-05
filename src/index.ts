@@ -1,3 +1,3 @@
 export type DoNotUse = never
 
-export type * from './globals'
+export type * from '@/globals'

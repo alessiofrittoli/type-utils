@@ -11,7 +11,6 @@
 [downloads-badge]: https://img.shields.io/npm/dm/%40alessiofrittoli%2Ftype-utils.svg
 [deps-badge]: https://img.shields.io/librariesio/release/npm/%40alessiofrittoli%2Ftype-utils
 [deps-url]: https://libraries.io/npm/%40alessiofrittoli%2Ftype-utils
-
 [sponsor-badge]: https://img.shields.io/static/v1?label=Fund%20this%20package&message=%E2%9D%A4&logo=GitHub&color=%23DB61A2
 [sponsor-url]: https://github.com/sponsors/alessiofrittoli
 
@@ -34,7 +33,7 @@
   - [Body](https://github.com/alessiofrittoli/type-utils/blob/master/docs/extenders/README.md#body)
     - [Body.json\<T\>()](https://github.com/alessiofrittoli/type-utils/blob/master/docs/extenders/README.md#bodyjsont)
 - [Development](#development)
-  - [Install depenendencies](#install-depenendencies)
+  - [Install dependencies](#install-dependencies)
   - [Build the source code](#build-the-source-code)
   - [ESLint](#eslint)
 - [Contributing](#contributing)
@@ -84,7 +83,7 @@ node node_modules/@alessiofrittoli/type-utils/scripts/postinstall/index.js
 
 ### Development
 
-#### Install depenendencies
+#### Install dependencies
 
 ```bash
 npm install
@@ -106,7 +105,7 @@ pnpm build
 
 #### [ESLint](https://www.npmjs.com/package/eslint)
 
-warnings / errors check.
+Run warnings and errors checks.
 
 ```bash
 pnpm lint
