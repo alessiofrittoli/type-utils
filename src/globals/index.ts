@@ -1,2 +1,2 @@
-export type * from './extenders/json'
-export type * from './utils'
+export type * from '@/globals/extenders/json'
+export type * from '@/globals/utils'
