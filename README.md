@@ -1,43 +1,76 @@
-# Type Utils ❇️
+<h1 align="center">Type Utils ❇️</h1>
+<h2 align="center">
+  Lightweight TypeScript types utilities
+</h2>
+<p align="center">
+  <a href="https://npmjs.org/package/@alessiofrittoli/type-utils">
+    <img src="https://img.shields.io/npm/v/@alessiofrittoli/type-utils" alt="Latest version"/>
+  </a>
+  <a href="https://socket.dev/npm/package/@alessiofrittoli/type-utils/overview">
+    <img src="https://socket.dev/api/badge/npm/package/@alessiofrittoli/type-utils" alt="Socket Security score"/>
+  </a>
+  <a href="https://npmjs.org/package/@alessiofrittoli/type-utils">
+    <img src="https://img.shields.io/npm/dm/@alessiofrittoli/type-utils.svg" alt="npm downloads"/>
+  </a>
+  <a href="https://bundlephobia.com/package/@alessiofrittoli/type-utils">
+    <img src="https://badgen.net/bundlephobia/dependency-count/@alessiofrittoli/type-utils" alt="Dependencies"/>
+  </a>
+  <a href="https://libraries.io/npm/%40alessiofrittoli%2Ftype-utils">
+    <img src="https://img.shields.io/librariesio/release/npm/@alessiofrittoli/type-utils" alt="Dependencies status"/>
+  </a>
+</p>
+<p align="center">
+  <a href="https://bundlephobia.com/package/@alessiofrittoli/type-utils">
+    <img src="https://badgen.net/bundlephobia/min/@alessiofrittoli/type-utils" alt="minified"/>
+  </a>
+  <a href="https://bundlephobia.com/package/@alessiofrittoli/type-utils">
+    <img src="https://badgen.net/bundlephobia/minzip/@alessiofrittoli/type-utils" alt="minizipped"/>
+  </a>
+  <a href="https://bundlephobia.com/package/@alessiofrittoli/type-utils">
+    <img src="https://badgen.net/bundlephobia/tree-shaking/@alessiofrittoli/type-utils" alt="Tree shakable"/>
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/sponsors/alessiofrittoli">
+    <img src="https://img.shields.io/static/v1?label=Fund%20this%20package&message=%E2%9D%A4&logo=GitHub&color=%23DB61A2" alt="Fund this package"/>
+  </a>
+</p>
 
-[![NPM Latest Version][version-badge]][npm-url] [![Socket Status][socket-badge]][socket-url] [![NPM Monthly Downloads][downloads-badge]][npm-url] [![Dependencies][deps-badge]][deps-url]
-
-[![GitHub Sponsor][sponsor-badge]][sponsor-url]
-
-[version-badge]: https://img.shields.io/npm/v/%40alessiofrittoli%2Ftype-utils
-[npm-url]: https://npmjs.org/package/%40alessiofrittoli%2Ftype-utils
-[socket-badge]: https://socket.dev/api/badge/npm/package/@alessiofrittoli/type-utils
-[socket-url]: https://socket.dev/npm/package/@alessiofrittoli/type-utils/overview
-[downloads-badge]: https://img.shields.io/npm/dm/%40alessiofrittoli%2Ftype-utils.svg
-[deps-badge]: https://img.shields.io/librariesio/release/npm/%40alessiofrittoli%2Ftype-utils
-[deps-url]: https://libraries.io/npm/%40alessiofrittoli%2Ftype-utils
 [sponsor-badge]: https://img.shields.io/static/v1?label=Fund%20this%20package&message=%E2%9D%A4&logo=GitHub&color=%23DB61A2
 [sponsor-url]: https://github.com/sponsors/alessiofrittoli
 
-## Lightweight TypeScript types utilities
-
-### Table of Contents
+### Table of Content
 
 - [Getting started](#getting-started)
+  - [Utility types usage](#utility-types-usage)
+  - [Global extenders setup](#global-extenders-setup)
+- [Development](#development)
+  - [Local development](#local-development)
+  - [Production build](#production-build)
+  - [Lint](#lint)
+  - [Contributing](#contributing)
+  - [Security](#security)
 - [Utility types](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md)
   - [ValueOf](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#valueof)
   - [ValueOfKey](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#valueofkey)
   - [OptionalKey](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#optionalkey)
+  - [ReadOnly](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#readonly)
   - [Writeable](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#writeable)
   - [RenameKey](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#renamekey)
-  - [ArgumentTypes](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#argumenttypes)
+  - [DeepPartial](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#deeppartial)
+  - [Full](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#full)
+  - [DeepFull](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#deepfull)
+  - [NonNullableFields](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#nonnullablefields)
+  - [MergedEnumValue](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#mergedenumvalue)
+  - [UnflatDotKeys](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#unflatdotkeys)
+  - [RecursivelyUnflatDotKeys](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#recursivelyunflatdotkeys)
+  - [ArgumentTypes](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md#argumenttypes) (deprecated)
 - [Extenders types](https://github.com/alessiofrittoli/type-utils/blob/master/docs/extenders/README.md)
   - [JSON](https://github.com/alessiofrittoli/type-utils/blob/master/docs/extenders/README.md#json)
     - [JSON.stringify\<T\>()](https://github.com/alessiofrittoli/type-utils/blob/master/docs/extenders/README.md#jsonstringifyt)
     - [JSON.parse\<T\>()](https://github.com/alessiofrittoli/type-utils/blob/master/docs/extenders/README.md#jsonparset)
   - [Body](https://github.com/alessiofrittoli/type-utils/blob/master/docs/extenders/README.md#body)
     - [Body.json\<T\>()](https://github.com/alessiofrittoli/type-utils/blob/master/docs/extenders/README.md#bodyjsont)
-- [Development](#development)
-  - [Install dependencies](#install-dependencies)
-  - [Build the source code](#build-the-source-code)
-  - [ESLint](#eslint)
-- [Contributing](#contributing)
-- [Security](#security)
 - [Credits](#made-with-)
 
 ---
@@ -56,64 +89,94 @@ or using `pnpm`
 pnpm i @alessiofrittoli/type-utils
 ```
 
-This tiny library defines some global types which are not imported in your IDE by default.\
-After installation a `postinstall` script is executed to create the `alessiofrittoli-env.d.ts` file at the root of your project.
-This script will try to update your `tsconfig.json` file.
+#### Utility types usage
 
-If that fail, please, make sure to add `alessiofrittoli-env.d.ts` in the array of the "include" property in your `tsconfig.json`.
+Utility types are exported from the package entry point and can be imported where needed:
+
+```ts
+import type { DeepPartial, ValueOf } from '@alessiofrittoli/type-utils'
+```
+
+See the [Utility types docs](https://github.com/alessiofrittoli/type-utils/blob/master/docs/utils/README.md) for the full list.
+
+#### Global extenders setup
+
+[Extenders types](https://github.com/alessiofrittoli/type-utils/blob/master/docs/extenders/README.md) augment built-in global interfaces (such as `JSON` and `Body`) and they are the only global types defined by this library. Global types are not loaded by your IDE by default.
+
+After installation a `postinstall` script is executed to create (or update) the `globals.d.ts` file at the root of your project, adding the following globals types reference:
+
+```ts
+/// <reference types="@alessiofrittoli/type-utils/globals" />
+```
+
+If the file get ignored by the TypeScript program of your project, please, manually add `globals.d.ts` in the array of the "include" property in your `tsconfig.json`.
 
 ```json
 {
     "compilerOptions": {
         ...
     },
-    "include": [ ..., "alessiofrittoli-env.d.ts" ],
+    "include": [ ..., "globals.d.ts" ],
 }
 ```
 
 You can skip this process if `*.ts` is already in your "include" array.
 
-⚠️ If the `alessiofrittoli-env.d.ts` file creation fails you can run the following command to manually execute the script:
+⚠️ If the `globals.d.ts` file creation fails you can run the following command to manually execute the script:
 
 ```bash
-node node_modules/@alessiofrittoli/type-utils/scripts/postinstall/index.js
+node node_modules/@alessiofrittoli/type-utils/scripts/postinstall/index.cjs
 ```
+
+💡 If you don't want to use the global extenders, simply remove the reference above from your `globals.d.ts` file. Utility types will keep working since they are imported explicitly.
 
 ---
 
 ### Development
 
-#### Install dependencies
+Run the following to start development
 
-```bash
-npm install
-```
+```shell
+nvm use
 
-or using `pnpm`
-
-```bash
 pnpm i
 ```
 
-#### Build the source code
+#### Local development
 
-Run the following command to test and build code for distribution.
+Run the following
 
-```bash
+```shell
+pnpm dev
+```
+
+This will generate unminified output code, sourcemaps and will enable source file watcher.
+
+---
+
+#### Production build
+
+Run the following to create a local production build
+
+```shell
 pnpm build
 ```
 
-#### [ESLint](https://www.npmjs.com/package/eslint)
+This will lint and type-check the source code, then generate minified output code without sourcemaps.
 
-Run warnings and errors checks.
+---
 
-```bash
+#### Lint
+
+Run warnings and errors checks with [oxlint](https://oxc.rs/docs/guide/usage/linter):
+
+```shell
 pnpm lint
 ```
 
 ---
 
-### Contributing
+#### Contributing
 
 Contributions are truly welcome!
 
@@ -125,9 +188,11 @@ Help keep this project up to date with [GitHub Sponsor][sponsor-url].
 
 ---
 
-### Security
+#### Security
 
 If you believe you have found a security vulnerability, we encourage you to **_responsibly disclose this and NOT open a public issue_**. We will investigate all legitimate reports. Email `security@alessiofrittoli.it` to disclose any security vulnerabilities.
+
+---
 
 ### Made with ☕
 
