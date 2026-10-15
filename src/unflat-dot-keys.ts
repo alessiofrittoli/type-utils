@@ -50,6 +50,6 @@ export type UnflatDotKeys<T, K extends string = never> = Unflat<PickDotKeys<T, K
  * Same as {@link UnflatDotKeys}, but dotted keys of nested object values are unflattened too.
  *
  * @template T The object interface to work with.
- * @template K The object interface specific key to work with (`${P}.*`).
+ * @template K The object interface specific key to work with (`${K}.*`).
  */
-export type RecursivelyUnflatDotKeys<T, P extends string = never> = Unflat<PickDotKeys<T, P>, true>
+export type RecursivelyUnflatDotKeys<T, K extends string = never> = Unflat<PickDotKeys<T, K>, true>
