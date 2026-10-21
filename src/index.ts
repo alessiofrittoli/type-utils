@@ -140,3 +140,31 @@ export type MergedEnumValue<T> = {
 		[K2 in keyof T[K]]: T[K][K2]
 	}[keyof T[K]]
 }[keyof T]
+
+/**
+ * Builds a discriminated union of `[event, args]` tuples from an event map.
+ *
+ * Each key of the given map becomes a tuple whose first element is the event name
+ * and whose second element is its payload type. Since the tuples are discriminated
+ * by the event name, checking `event` narrows `args` to the matching payload.
+ *
+ * @template M The event map, where each key is an event name and each value is its payload type.
+ *
+ * @example
+ * ```ts
+ * interface Events {
+ * 	play: { position: number };
+ * 	error: Error;
+ * }
+ *
+ * type Args = EventArgs<Events>;
+ * // [event: 'play', args: { position: number }] | [event: 'error', args: PlayerError]
+ *
+ * const onEvent = (...[event, args]: Args) => {
+ * 	if (event === "play") {
+ * 		console.log(args.position); // `args` is narrowed to `{ position: number }`
+ * 	}
+ * };
+ * ```
+ */
+export type EventArgs<M> = { [K in keyof M]: [event: K, args: M[K]] }[keyof M]
