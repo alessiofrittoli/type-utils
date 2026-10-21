@@ -140,3 +140,62 @@ export type MergedEnumValue<T> = {
 		[K2 in keyof T[K]]: T[K][K2]
 	}[keyof T[K]]
 }[keyof T]
+
+/**
+ * Builds a discriminated union of `[event, args]` tuples from an event map.
+ *
+ * Each key of the given map becomes a tuple whose first element is the event name
+ * and whose second element is its payload type. Since the tuples are discriminated
+ * by the event name, checking `event` narrows `args` to the matching payload.
+ *
+ * @template M The event map, where each key is an event name and each value is its payload type.
+ *
+ * @example
+ * ```ts
+ * interface Events {
+ * 	play: { position: number }
+ * 	error: Error
+ * }
+ *
+ * type OnEventHandler = (...args: MappedArgs<Events>) => void
+ *
+ * const onEvent: OnEventHandler = (event, args): void => {
+ * 	if (event === 'play') {
+ * 		console.log(args.position) // `args` is narrowed to `{ position: number }`
+ * 	}
+ * 	if (event === 'error') {
+ * 		console.log(args) // `args` is narrowed to `Error`
+ * 	}
+ * }
+ *
+ * onEvent('play', { position: 0 })
+ * onEvent('error', new Error())
+ * ```
+ *
+ * ---
+ *
+ * @example
+ * ```ts
+ * interface Events {
+ * 	play: [data: { position: number }]
+ * 	error: [error: Error]
+ * }
+ *
+ * type OnEventHandler = (...args: MappedArgs<Events>) => void
+ *
+ * const onEvent: OnEventHandler = (event, args): void => {
+ * 	if (event === 'play') {
+ * 		const [payload] = args
+ * 		console.log(payload.position) // `args` is narrowed to [`{ position: number }`]
+ * 	}
+ * 	if (event === 'error') {
+ * 		const [error] = args // `args` is narrowed to [`Error`]
+ * 		console.log(error)
+ * 	}
+ * }
+ *
+ * onEvent('play', [{ position: 0 }])
+ * onEvent('error', [new Error()])
+ * ```
+ */
+export type MappedArgs<M> = { [K in keyof M]: [event: K, args: M[K]] }[keyof M]
