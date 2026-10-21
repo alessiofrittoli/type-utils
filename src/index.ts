@@ -153,18 +153,49 @@ export type MergedEnumValue<T> = {
  * @example
  * ```ts
  * interface Events {
- * 	play: { position: number };
- * 	error: Error;
+ * 	play: { position: number }
+ * 	error: Error
  * }
  *
- * type Args = EventArgs<Events>;
- * // [event: 'play', args: { position: number }] | [event: 'error', args: PlayerError]
+ * type OnEventHandler = (...args: MappedArgs<Events>) => void
  *
- * const onEvent = (...[event, args]: Args) => {
- * 	if (event === "play") {
- * 		console.log(args.position); // `args` is narrowed to `{ position: number }`
+ * const onEvent: OnEventHandler = (event, args): void => {
+ * 	if (event === 'play') {
+ * 		console.log(args.position) // `args` is narrowed to `{ position: number }`
  * 	}
- * };
+ * 	if (event === 'error') {
+ * 		console.log(args) // `args` is narrowed to `Error`
+ * 	}
+ * }
+ *
+ * onEvent('play', { position: 0 })
+ * onEvent('error', new Error())
+ * ```
+ *
+ * ---
+ *
+ * @example
+ * ```ts
+ * interface Events {
+ * 	play: [data: { position: number }]
+ * 	error: [error: Error]
+ * }
+ *
+ * type OnEventHandler = (...args: MappedArgs<Events>) => void
+ *
+ * const onEvent: OnEventHandler = (event, args): void => {
+ * 	if (event === 'play') {
+ * 		const [payload] = args
+ * 		console.log(payload.position) // `args` is narrowed to [`{ position: number }`]
+ * 	}
+ * 	if (event === 'error') {
+ * 		const [error] = args // `args` is narrowed to [`Error`]
+ * 		console.log(error)
+ * 	}
+ * }
+ *
+ * onEvent('play', [{ position: 0 }])
+ * onEvent('error', [new Error()])
  * ```
  */
-export type EventArgs<M> = { [K in keyof M]: [event: K, args: M[K]] }[keyof M]
+export type MappedArgs<M> = { [K in keyof M]: [event: K, args: M[K]] }[keyof M]
