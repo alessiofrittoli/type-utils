@@ -199,3 +199,31 @@ export type MergedEnumValue<T> = {
  * ```
  */
 export type MappedArgs<M> = { [K in keyof M]: [event: K, args: M[K]] }[keyof M]
+
+/**
+ * Constructs a type by picking all properties from `T` and then removing `U`.
+ *
+ * This is a strict version of the built-in `Omit`. The built-in one declares its keys
+ * as `K extends keyof any`, so it accepts **any** string, number or symbol: a typo or a
+ * property removed/renamed from `T` is silently ignored and the omission becomes a no-op,
+ * with no editor autocompletion on the keys either.
+ *
+ * Constraining `U` to `keyof T` makes the compiler reject keys that don't exist on `T`,
+ * so omitted properties stay in sync with the source type when it changes.
+ *
+ * @template T The type/interface from which properties will be omitted.
+ * @template U The keys of `T` to omit.
+ *
+ * @example
+ * ```ts
+ * interface User {
+ * 	id: string
+ * 	name: string
+ * }
+ *
+ * type A = globalThis.Omit<User, 'nmae'> // ✅ compiles, `name` is NOT omitted
+ * type B = Omit<User, 'nmae'> // ❌ Type '"nmae"' does not satisfy the constraint 'keyof User'.
+ * type C = Omit<User, 'name'> // ✅ `{ id: string }`
+ * ```
+ */
+export type Omit<T, U extends keyof T> = globalThis.Omit<T, U>
